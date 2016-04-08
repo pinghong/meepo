@@ -154,9 +154,9 @@ public class ByteClassLoader extends URLClassLoader {
     public static void main(String args[]) {
 
         ByteClassLoader byteClassLoader = new ByteClassLoader(Thread.currentThread().getContextClassLoader());
-        byteClassLoader.testUrlClassloader(new File("F:/class/apitest-0.0.1-SNAPSHOT.jar"));
+//        byteClassLoader.testUrlClassloader(new File("F:/class/apitest-0.0.1-SNAPSHOT.jar"));
         byteClassLoader.testClassLoader();
-        byteClassLoader.testClassLoaderFromJar();
+//        byteClassLoader.testClassLoaderFromJar();
     }
 
 }
