@@ -1,6 +1,5 @@
 package com.yun.hop.commons.classloader;
 
-import com.shuyun.evtsvc.EventProcessContext;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -74,17 +73,24 @@ public class ByteClassLoader extends URLClassLoader {
         } catch (IOException e) {
             LOG.error(e.getMessage(), e);
         } finally {
+
             try {
                 if (jarFile != null) {
                     jarFile.close();
                 }
-                if (tempFile != null) {
-                    tempFile.delete();
-                }
-
             } catch (Exception e) {
                 LOG.error(e.getMessage(), e);
             }
+
+            try {
+                if (tempFile != null) {
+                    tempFile.delete();
+                }
+            } catch (Exception e) {
+                LOG.error(e.getMessage(), e);
+            }
+
+
 
         }
 
